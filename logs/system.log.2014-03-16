@@ -1,0 +1,82 @@
+[2014-03-16 22:07:44][debug]  call action => OrderMngAction.getOrderList
+[2014-03-16 22:07:44][debug]  Database Driver Class Initialized
+[2014-03-16 22:07:44][error]  Unable to connect to the database
+[2014-03-16 22:07:44][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-03-16 22:07:44][error]  Unable to connect to the database
+[2014-03-16 22:07:44][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-03-16 22:07:44][error]  Unable to connect to the database
+[2014-03-16 22:07:44][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.005072
+[2014-03-16 22:07:44][debug]  
+[2014-03-16 22:07:44][debug]  call action => OrderMngAction.getOrderList
+[2014-03-16 22:07:44][debug]  Database Driver Class Initialized
+[2014-03-16 22:07:44][error]  Unable to connect to the database
+[2014-03-16 22:07:44][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-03-16 22:07:44][error]  Unable to connect to the database
+[2014-03-16 22:07:44][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-03-16 22:07:44][error]  Unable to connect to the database
+[2014-03-16 22:07:44][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.004903
+[2014-03-16 22:07:44][debug]  
+[2014-03-16 22:07:44][debug]  call action => OrderMngAction.getConsigneeList
+[2014-03-16 22:07:44][debug]  Database Driver Class Initialized
+[2014-03-16 22:07:44][error]  Unable to connect to the database
+[2014-03-16 22:07:44][error]  Unable to connect to the database
+[2014-03-16 22:07:44][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-03-16 22:07:44][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.002838
+[2014-03-16 22:07:44][debug]  
+[2014-03-16 22:07:44][debug]  call action => CustomerMngAction.getCustomerList
+[2014-03-16 22:07:44][debug]  Database Driver Class Initialized
+[2014-03-16 22:07:44][error]  Unable to connect to the database
+[2014-03-16 22:07:44][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-03-16 22:07:44][error]  Unable to connect to the database
+[2014-03-16 22:07:44][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-03-16 22:07:44][error]  Unable to connect to the database
+[2014-03-16 22:07:44][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.003497
+[2014-03-16 22:07:44][debug]  
+[2014-03-16 22:07:44][debug]  call action => CustomerMngAction.getCustomerList
+[2014-03-16 22:07:44][debug]  Database Driver Class Initialized
+[2014-03-16 22:07:44][error]  Unable to connect to the database
+[2014-03-16 22:07:44][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-03-16 22:07:44][error]  Unable to connect to the database
+[2014-03-16 22:07:44][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-03-16 22:07:44][error]  Unable to connect to the database
+[2014-03-16 22:07:44][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.006467
+[2014-03-16 22:07:44][debug]  
+[2014-03-16 22:07:46][debug]  call action => ItemMngAction.getItemList
+[2014-03-16 22:07:46][debug]  Database Driver Class Initialized
+[2014-03-16 22:07:46][error]  Unable to connect to the database
+[2014-03-16 22:07:46][error]  Unable to connect to the database
+[2014-03-16 22:07:46][debug]  finished action => ItemMngAction.getItemList, cost time = 0.005642
+[2014-03-16 22:07:46][debug]  
+[2014-03-16 22:09:10][debug]  call action => CustomerMngAction.getCustomerList
+[2014-03-16 22:09:10][debug]  Database Driver Class Initialized
+[2014-03-16 22:09:10][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-03-16 22:09:10][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-03-16 22:09:10][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.02128
+[2014-03-16 22:09:10][debug]  
+[2014-03-16 22:09:10][debug]  call action => CustomerMngAction.getCustomerList
+[2014-03-16 22:09:10][debug]  Database Driver Class Initialized
+[2014-03-16 22:09:10][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-03-16 22:09:10][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-03-16 22:09:10][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.003264
+[2014-03-16 22:09:10][debug]  
+[2014-03-16 22:09:11][debug]  call action => OrderMngAction.getOrderList
+[2014-03-16 22:09:11][debug]  Database Driver Class Initialized
+[2014-03-16 22:09:11][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-03-16 22:09:11][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-03-16 22:09:11][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.006613
+[2014-03-16 22:09:11][debug]  
+[2014-03-16 22:09:11][debug]  call action => OrderMngAction.getOrderList
+[2014-03-16 22:09:11][debug]  Database Driver Class Initialized
+[2014-03-16 22:09:11][debug]  call action => OrderMngAction.getConsigneeList
+[2014-03-16 22:09:11][debug]  Database Driver Class Initialized
+[2014-03-16 22:09:11][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-03-16 22:09:11][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-03-16 22:09:11][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.0035689999999999
+[2014-03-16 22:09:11][debug]  
+[2014-03-16 22:09:11][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-03-16 22:09:11][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.011481
+[2014-03-16 22:09:11][debug]  
+[2014-03-16 22:09:12][debug]  call action => ItemMngAction.getItemList
+[2014-03-16 22:09:12][debug]  Database Driver Class Initialized
+[2014-03-16 22:09:12][debug]  finished action => ItemMngAction.getItemList, cost time = 0.00841
+[2014-03-16 22:09:12][debug]  

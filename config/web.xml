@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web>
+    <system>
+        <log_path>{root}/logs/system.log</log_path>
+        <log_level>debug</log_level>
+    </system>
+ 
+    <db>
+        <dbcode>water</dbcode>
+        <hostname>127.0.0.1</hostname>
+        <port>3306</port>
+        <username>root</username>
+        <password></password>
+        <database>water</database>
+        <db_debug>true</db_debug>
+        <save_queries>true</save_queries>
+    </db>
+
+</web>

@@ -1,0 +1,878 @@
+[2014-02-27 03:58:50][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 03:58:50][debug]  Database Driver Class Initialized
+[2014-02-27 03:58:50][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 03:58:50][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.003675
+[2014-02-27 03:58:50][debug]  
+[2014-02-27 03:59:01][debug]  call action => OrderMngAction.createOrder
+[2014-02-27 03:59:01][debug]  Database Driver Class Initialized
+[2014-02-27 03:59:01][debug]  get_consignee_name.sql =>SELECT `name` FROM `customer` WHERE `id`=10
+[2014-02-27 03:59:01][debug]  create_order.customer=>UPDATE `customer` SET `owe`=`owe`+17,`sale`=`sale`+67,`debt`=`debt`+679 WHERE `id`=10
+[2014-02-27 03:59:01][debug]  create_order.item=>UPDATE `item` SET `store`=`store`-67,`sale`=`sale`+67 WHERE `id`=1
+[2014-02-27 03:59:01][debug]  {"sale":67,"recycle":50,"date":"2014\/02\/25","deliver":"agg","mark":"","pay":"679","consignee":"aaa","consignee_id":10}
+[2014-02-27 03:59:01][debug]  finished action => OrderMngAction.createOrder, cost time = 0.164598
+[2014-02-27 03:59:01][debug]  
+[2014-02-27 03:59:02][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 03:59:02][debug]  Database Driver Class Initialized
+[2014-02-27 03:59:02][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 03:59:02][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 03:59:02][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012977
+[2014-02-27 03:59:02][debug]  
+[2014-02-27 03:59:17][debug]  call action => ItemMngAction.getItemList
+[2014-02-27 03:59:17][debug]  Database Driver Class Initialized
+[2014-02-27 03:59:17][debug]  finished action => ItemMngAction.getItemList, cost time = 0.011967
+[2014-02-27 03:59:17][debug]  
+[2014-02-27 03:59:24][debug]  call action => OrderMngAction.deleteOrder
+[2014-02-27 03:59:24][debug]  Database Driver Class Initialized
+[2014-02-27 03:59:24][debug]  delete_order.customer=>UPDATE `customer` SET `owe`=`owe`-17,`sale`=`sale`-67,`debt`=`debt`-679 WHERE `id`=10
+[2014-02-27 03:59:24][debug]  delete_order.item=>UPDATE `item` SET `store`=`store`+67,`sale`=`sale`-67
+[2014-02-27 03:59:24][debug]  delete_order.sql=>DELETE FROM `order` WHERE `id`=23
+[2014-02-27 03:59:24][debug]  finished action => OrderMngAction.deleteOrder, cost time = 0.267477
+[2014-02-27 03:59:24][debug]  
+[2014-02-27 03:59:24][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 03:59:24][debug]  Database Driver Class Initialized
+[2014-02-27 03:59:24][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 03:59:24][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 03:59:24][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.014318
+[2014-02-27 03:59:24][debug]  
+[2014-02-27 03:59:28][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 03:59:28][debug]  Database Driver Class Initialized
+[2014-02-27 03:59:28][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 03:59:28][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 03:59:28][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.004623
+[2014-02-27 03:59:28][debug]  
+[2014-02-27 03:59:40][debug]  call action => OrderMngAction.payOrder
+[2014-02-27 03:59:40][debug]  Database Driver Class Initialized
+[2014-02-27 03:59:40][debug]  delete_order.customer=>UPDATE `customer` SET `debt`=`debt`-450 WHERE `id`=10
+[2014-02-27 03:59:40][debug]  pay_order.sql=>UPDATE `order` SET `status`=1 WHERE `id`=19
+[2014-02-27 03:59:40][debug]  finished action => OrderMngAction.payOrder, cost time = 0.207344
+[2014-02-27 03:59:40][debug]  
+[2014-02-27 03:59:40][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 03:59:40][debug]  Database Driver Class Initialized
+[2014-02-27 03:59:40][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 03:59:40][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 03:59:40][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012196
+[2014-02-27 03:59:40][debug]  
+[2014-02-27 03:59:44][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 03:59:44][debug]  Database Driver Class Initialized
+[2014-02-27 03:59:44][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 03:59:44][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 03:59:44][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.013194
+[2014-02-27 03:59:44][debug]  
+[2014-02-27 03:59:59][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 03:59:59][debug]  Database Driver Class Initialized
+[2014-02-27 03:59:59][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 03:59:59][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.0122
+[2014-02-27 03:59:59][debug]  
+[2014-02-27 04:00:03][debug]  call action => OrderMngAction.payOrder
+[2014-02-27 04:00:03][debug]  Database Driver Class Initialized
+[2014-02-27 04:00:04][debug]  delete_order.customer=>UPDATE `customer` SET `debt`=`debt`-750 WHERE `id`=10
+[2014-02-27 04:00:04][debug]  pay_order.sql=>UPDATE `order` SET `status`=1 WHERE `id`=22
+[2014-02-27 04:00:04][debug]  finished action => OrderMngAction.payOrder, cost time = -0.906515
+[2014-02-27 04:00:04][debug]  
+[2014-02-27 04:00:04][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:00:04][debug]  Database Driver Class Initialized
+[2014-02-27 04:00:04][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:00:04][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:00:04][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.00409
+[2014-02-27 04:00:04][debug]  
+[2014-02-27 04:00:06][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:00:06][debug]  Database Driver Class Initialized
+[2014-02-27 04:00:06][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 AND `status`=0 LIMIT 0,50
+[2014-02-27 04:00:06][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1 AND `status`=0
+[2014-02-27 04:00:06][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.004354
+[2014-02-27 04:00:06][debug]  
+[2014-02-27 04:00:11][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:00:11][debug]  Database Driver Class Initialized
+[2014-02-27 04:00:11][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 AND `consignee_id`=10 AND `status`=1 LIMIT 0,50
+[2014-02-27 04:00:11][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1 AND `consignee_id`=10 AND `status`=1
+[2014-02-27 04:00:11][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.004224
+[2014-02-27 04:00:11][debug]  
+[2014-02-27 04:00:15][debug]  call action => OrderMngAction.getSaleTendency
+[2014-02-27 04:00:15][debug]  Database Driver Class Initialized
+[2014-02-27 04:00:15][debug]  get_owe_tendency.sql =>SELECT sum(`sale`) as y,`date` as x FROM `order` WHERE `date`>'2014-01-28' GROUP BY `date`
+[2014-02-27 04:00:15][debug]  finished action => OrderMngAction.getSaleTendency, cost time = 0.002901
+[2014-02-27 04:00:15][debug]  
+[2014-02-27 04:00:29][debug]  call action => CustomerMngAction.getCustomerDebtPie
+[2014-02-27 04:00:29][debug]  Database Driver Class Initialized
+[2014-02-27 04:00:29][debug]  SELECT `debt` as data,`name` as cate FROM `customer`
+[2014-02-27 04:00:29][debug]  finished action => CustomerMngAction.getCustomerDebtPie, cost time = 0.011375
+[2014-02-27 04:00:29][debug]  
+[2014-02-27 04:00:43][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:00:43][debug]  Database Driver Class Initialized
+[2014-02-27 04:00:43][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:00:43][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:00:43][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012524
+[2014-02-27 04:00:43][debug]  
+[2014-02-27 04:00:43][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:00:43][debug]  Database Driver Class Initialized
+[2014-02-27 04:00:43][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:00:43][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 04:00:43][debug]  Database Driver Class Initialized
+[2014-02-27 04:00:43][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:00:43][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.004117
+[2014-02-27 04:00:43][debug]  
+[2014-02-27 04:00:43][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 04:00:43][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.0027
+[2014-02-27 04:00:43][debug]  
+[2014-02-27 04:01:26][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:01:26][debug]  Database Driver Class Initialized
+[2014-02-27 04:01:26][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:01:26][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:01:26][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.01225
+[2014-02-27 04:01:26][debug]  
+[2014-02-27 04:01:26][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:01:26][debug]  Database Driver Class Initialized
+[2014-02-27 04:01:26][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:01:26][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:01:26][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.0030640000000001
+[2014-02-27 04:01:26][debug]  
+[2014-02-27 04:01:26][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 04:01:26][debug]  Database Driver Class Initialized
+[2014-02-27 04:01:26][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 04:01:26][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.012145
+[2014-02-27 04:01:26][debug]  
+[2014-02-27 04:01:28][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:01:28][debug]  Database Driver Class Initialized
+[2014-02-27 04:01:28][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 ORDER BY pay ASC LIMIT 0,50
+[2014-02-27 04:01:28][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:01:28][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012581
+[2014-02-27 04:01:28][debug]  
+[2014-02-27 04:01:28][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:01:28][debug]  Database Driver Class Initialized
+[2014-02-27 04:01:28][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 ORDER BY pay DESC LIMIT 0,50
+[2014-02-27 04:01:28][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:01:28][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.002226
+[2014-02-27 04:01:28][debug]  
+[2014-02-27 04:01:31][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:01:31][debug]  Database Driver Class Initialized
+[2014-02-27 04:01:31][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 ORDER BY recycle ASC LIMIT 0,50
+[2014-02-27 04:01:31][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:01:31][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012913
+[2014-02-27 04:01:31][debug]  
+[2014-02-27 04:01:32][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:01:32][debug]  Database Driver Class Initialized
+[2014-02-27 04:01:32][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 ORDER BY recycle DESC LIMIT 0,50
+[2014-02-27 04:01:32][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:01:32][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.013652
+[2014-02-27 04:01:32][debug]  
+[2014-02-27 04:01:34][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 04:01:34][debug]  Database Driver Class Initialized
+[2014-02-27 04:01:34][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:01:34][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 04:01:34][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.011932
+[2014-02-27 04:01:34][debug]  
+[2014-02-27 04:01:34][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 04:01:34][debug]  Database Driver Class Initialized
+[2014-02-27 04:01:34][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:01:34][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 04:01:34][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.011728
+[2014-02-27 04:01:34][debug]  
+[2014-02-27 04:01:39][debug]  call action => ItemMngAction.getItemList
+[2014-02-27 04:01:39][debug]  Database Driver Class Initialized
+[2014-02-27 04:01:39][debug]  finished action => ItemMngAction.getItemList, cost time = 0.01163
+[2014-02-27 04:01:39][debug]  
+[2014-02-27 04:01:40][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:01:40][debug]  Database Driver Class Initialized
+[2014-02-27 04:01:40][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 ORDER BY recycle DESC LIMIT 0,50
+[2014-02-27 04:01:40][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:01:40][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012148
+[2014-02-27 04:01:40][debug]  
+[2014-02-27 04:01:40][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:01:40][debug]  Database Driver Class Initialized
+[2014-02-27 04:01:40][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 04:01:40][debug]  Database Driver Class Initialized
+[2014-02-27 04:01:40][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 ORDER BY recycle DESC LIMIT 0,50
+[2014-02-27 04:01:40][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:01:40][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 04:01:40][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.002389
+[2014-02-27 04:01:40][debug]  
+[2014-02-27 04:01:40][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.004197
+[2014-02-27 04:01:40][debug]  
+[2014-02-27 04:03:53][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 04:03:53][debug]  Database Driver Class Initialized
+[2014-02-27 04:03:53][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:03:53][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 04:03:53][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.00321
+[2014-02-27 04:03:53][debug]  
+[2014-02-27 04:03:53][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 04:03:53][debug]  Database Driver Class Initialized
+[2014-02-27 04:03:53][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:03:53][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 04:03:53][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.005025
+[2014-02-27 04:03:53][debug]  
+[2014-02-27 04:04:14][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:04:14][debug]  Database Driver Class Initialized
+[2014-02-27 04:04:14][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:04:14][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:04:14][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.002708
+[2014-02-27 04:04:14][debug]  
+[2014-02-27 04:04:14][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:04:14][debug]  Database Driver Class Initialized
+[2014-02-27 04:04:14][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 04:04:14][debug]  Database Driver Class Initialized
+[2014-02-27 04:04:14][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:04:14][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:04:14][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.013419
+[2014-02-27 04:04:14][debug]  
+[2014-02-27 04:04:14][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 04:04:14][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.013394
+[2014-02-27 04:04:14][debug]  
+[2014-02-27 04:04:15][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 04:04:15][debug]  Database Driver Class Initialized
+[2014-02-27 04:04:15][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:04:15][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 04:04:15][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.011292
+[2014-02-27 04:04:15][debug]  
+[2014-02-27 04:04:15][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 04:04:15][debug]  Database Driver Class Initialized
+[2014-02-27 04:04:15][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:04:15][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 04:04:15][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.003493
+[2014-02-27 04:04:15][debug]  
+[2014-02-27 04:04:18][debug]  call action => CustomerMngAction.deleteCustomer
+[2014-02-27 04:04:18][debug]  Database Driver Class Initialized
+[2014-02-27 04:04:18][debug]  DB Transaction Failure
+[2014-02-27 04:04:18][error]  Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+[2014-02-27 04:04:18][debug]  delete_customer.sql =>DELETE FROM `customer` WHERE `id` IN ()
+[2014-02-27 04:04:18][debug]  finished action => CustomerMngAction.deleteCustomer, cost time = 0.012273
+[2014-02-27 04:04:18][debug]  
+[2014-02-27 04:06:27][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 04:06:27][debug]  Database Driver Class Initialized
+[2014-02-27 04:06:27][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:06:27][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 04:06:27][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.01269
+[2014-02-27 04:06:27][debug]  
+[2014-02-27 04:06:27][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 04:06:27][debug]  Database Driver Class Initialized
+[2014-02-27 04:06:27][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:06:27][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 04:06:27][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.003818
+[2014-02-27 04:06:27][debug]  
+[2014-02-27 04:06:48][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 04:06:48][debug]  Database Driver Class Initialized
+[2014-02-27 04:06:48][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:06:48][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 04:06:48][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.0039950000000001
+[2014-02-27 04:06:48][debug]  
+[2014-02-27 04:06:48][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 04:06:48][debug]  Database Driver Class Initialized
+[2014-02-27 04:06:48][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:06:48][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 04:06:48][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.003068
+[2014-02-27 04:06:48][debug]  
+[2014-02-27 04:07:08][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 04:07:08][debug]  Database Driver Class Initialized
+[2014-02-27 04:07:08][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:07:08][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 04:07:08][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.012044
+[2014-02-27 04:07:08][debug]  
+[2014-02-27 04:07:08][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 04:07:08][debug]  Database Driver Class Initialized
+[2014-02-27 04:07:08][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:07:08][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 04:07:08][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.01198
+[2014-02-27 04:07:08][debug]  
+[2014-02-27 04:08:17][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:08:17][debug]  Database Driver Class Initialized
+[2014-02-27 04:08:17][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:08:17][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:08:17][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.0026459999999999
+[2014-02-27 04:08:17][debug]  
+[2014-02-27 04:08:18][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:08:18][debug]  Database Driver Class Initialized
+[2014-02-27 04:08:18][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 04:08:18][debug]  Database Driver Class Initialized
+[2014-02-27 04:08:18][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:08:18][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:08:18][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.003459
+[2014-02-27 04:08:18][debug]  
+[2014-02-27 04:08:18][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 04:08:18][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.002455
+[2014-02-27 04:08:18][debug]  
+[2014-02-27 04:08:19][debug]  call action => ItemMngAction.getItemList
+[2014-02-27 04:08:19][debug]  Database Driver Class Initialized
+[2014-02-27 04:08:19][debug]  finished action => ItemMngAction.getItemList, cost time = 0.011684
+[2014-02-27 04:08:19][debug]  
+[2014-02-27 04:08:46][debug]  call action => OrderMngAction.payOrder
+[2014-02-27 04:08:46][debug]  Database Driver Class Initialized
+[2014-02-27 04:08:46][debug]  finished action => OrderMngAction.payOrder, cost time = 0.002352
+[2014-02-27 04:08:46][debug]  
+[2014-02-27 04:08:46][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:08:46][debug]  Database Driver Class Initialized
+[2014-02-27 04:08:46][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:08:46][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:08:46][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.001929
+[2014-02-27 04:08:46][debug]  
+[2014-02-27 04:08:52][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 04:08:52][debug]  Database Driver Class Initialized
+[2014-02-27 04:08:52][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:08:52][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 04:08:52][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.012804
+[2014-02-27 04:08:52][debug]  
+[2014-02-27 04:08:57][debug]  call action => OrderMngAction.payOrder
+[2014-02-27 04:08:57][debug]  Database Driver Class Initialized
+[2014-02-27 04:08:57][debug]  delete_order.customer=>UPDATE `customer` SET `debt`=`debt`-800 WHERE `id`=10
+[2014-02-27 04:08:57][debug]  pay_order.sql=>UPDATE `order` SET `status`=1 WHERE `id`=21
+[2014-02-27 04:08:57][debug]  finished action => OrderMngAction.payOrder, cost time = 0.157293
+[2014-02-27 04:08:57][debug]  
+[2014-02-27 04:08:57][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:08:57][debug]  Database Driver Class Initialized
+[2014-02-27 04:08:57][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:08:57][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:08:57][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012947
+[2014-02-27 04:08:57][debug]  
+[2014-02-27 04:09:00][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 04:09:00][debug]  Database Driver Class Initialized
+[2014-02-27 04:09:00][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:09:00][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 04:09:00][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.014133
+[2014-02-27 04:09:00][debug]  
+[2014-02-27 04:10:11][debug]  call action => ItemMngAction.getItemList
+[2014-02-27 04:10:11][debug]  Database Driver Class Initialized
+[2014-02-27 04:10:11][debug]  finished action => ItemMngAction.getItemList, cost time = 0.012161
+[2014-02-27 04:10:11][debug]  
+[2014-02-27 04:10:13][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:10:13][debug]  Database Driver Class Initialized
+[2014-02-27 04:10:13][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:10:13][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:10:13][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.01205
+[2014-02-27 04:10:13][debug]  
+[2014-02-27 04:10:13][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 04:10:13][debug]  Database Driver Class Initialized
+[2014-02-27 04:10:13][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 04:10:13][debug]  Database Driver Class Initialized
+[2014-02-27 04:10:13][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 04:10:13][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 04:10:13][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.0076310000000001
+[2014-02-27 04:10:13][debug]  
+[2014-02-27 04:10:13][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 04:10:13][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.004599
+[2014-02-27 04:10:13][debug]  
+[2014-02-27 05:36:21][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:36:21][debug]  Database Driver Class Initialized
+[2014-02-27 05:36:21][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:36:21][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:36:21][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.013334
+[2014-02-27 05:36:21][debug]  
+[2014-02-27 05:36:21][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:36:21][debug]  Database Driver Class Initialized
+[2014-02-27 05:36:21][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:36:21][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:36:21][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.003838
+[2014-02-27 05:36:21][debug]  
+[2014-02-27 05:36:36][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:36:36][debug]  Database Driver Class Initialized
+[2014-02-27 05:36:36][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:36:36][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:36:36][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.0035970000000001
+[2014-02-27 05:36:36][debug]  
+[2014-02-27 05:36:36][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:36:36][debug]  Database Driver Class Initialized
+[2014-02-27 05:36:36][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 05:36:36][debug]  Database Driver Class Initialized
+[2014-02-27 05:36:36][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:36:36][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:36:36][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 05:36:36][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.003232
+[2014-02-27 05:36:36][debug]  
+[2014-02-27 05:36:36][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.005691
+[2014-02-27 05:36:36][debug]  
+[2014-02-27 05:36:38][debug]  call action => ItemMngAction.getItemList
+[2014-02-27 05:36:38][debug]  Database Driver Class Initialized
+[2014-02-27 05:36:38][debug]  finished action => ItemMngAction.getItemList, cost time = 0.003313
+[2014-02-27 05:36:38][debug]  
+[2014-02-27 05:38:42][debug]  call action => OrderMngAction.deleteOrder
+[2014-02-27 05:38:42][debug]  Database Driver Class Initialized
+[2014-02-27 05:38:42][debug]  delete_order.customer=>UPDATE `customer` SET `owe`=`owe`-30,`sale`=`sale`-70,`debt`=`debt`-800 WHERE `id`=10
+[2014-02-27 05:38:42][debug]  delete_order.item=>UPDATE `item` SET `store`=`store`+70,`sale`=`sale`-70
+[2014-02-27 05:38:42][debug]  delete_order.sql=>DELETE FROM `order` WHERE `id`=21
+[2014-02-27 05:38:42][debug]  finished action => OrderMngAction.deleteOrder, cost time = 0.139133
+[2014-02-27 05:38:42][debug]  
+[2014-02-27 05:38:42][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:38:42][debug]  Database Driver Class Initialized
+[2014-02-27 05:38:42][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:38:42][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:38:42][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012564
+[2014-02-27 05:38:42][debug]  
+[2014-02-27 05:38:46][debug]  call action => ItemMngAction.getItemList
+[2014-02-27 05:38:46][debug]  Database Driver Class Initialized
+[2014-02-27 05:38:46][debug]  finished action => ItemMngAction.getItemList, cost time = 0.004528
+[2014-02-27 05:38:46][debug]  
+[2014-02-27 05:38:48][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:38:48][debug]  Database Driver Class Initialized
+[2014-02-27 05:38:48][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:38:48][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:38:48][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.014119
+[2014-02-27 05:38:48][debug]  
+[2014-02-27 05:38:53][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 05:38:53][debug]  Database Driver Class Initialized
+[2014-02-27 05:38:53][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 05:38:53][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.012637
+[2014-02-27 05:38:53][debug]  
+[2014-02-27 05:39:07][debug]  call action => OrderMngAction.createOrder
+[2014-02-27 05:39:07][debug]  Database Driver Class Initialized
+[2014-02-27 05:39:07][debug]  get_consignee_name.sql =>SELECT `name` FROM `customer` WHERE `id`=10
+[2014-02-27 05:39:07][debug]  create_order.customer=>UPDATE `customer` SET `owe`=`owe`+0,`sale`=`sale`+0,`debt`=`debt`+-800 WHERE `id`=10
+[2014-02-27 05:39:07][debug]  create_order.item=>UPDATE `item` SET `store`=`store`-0,`sale`=`sale`+0 WHERE `id`=1
+[2014-02-27 05:39:07][debug]  {"sale":0,"recycle":0,"date":"2014\/02\/11","deliver":"\u5676","mark":"","pay":"-800","consignee":"aaa","consignee_id":10}
+[2014-02-27 05:39:07][debug]  finished action => OrderMngAction.createOrder, cost time = 0.120711
+[2014-02-27 05:39:07][debug]  
+[2014-02-27 05:39:07][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:39:07][debug]  Database Driver Class Initialized
+[2014-02-27 05:39:07][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:39:07][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:39:07][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012004
+[2014-02-27 05:39:07][debug]  
+[2014-02-27 05:39:13][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:39:13][debug]  Database Driver Class Initialized
+[2014-02-27 05:39:13][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:39:13][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:39:13][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.014325
+[2014-02-27 05:39:13][debug]  
+[2014-02-27 05:39:23][debug]  call action => OrderMngAction.deleteOrder
+[2014-02-27 05:39:23][debug]  Database Driver Class Initialized
+[2014-02-27 05:39:23][debug]  delete_order.customer=>UPDATE `customer` SET `owe`=`owe`-0,`sale`=`sale`-0,`debt`=`debt`--800 WHERE `id`=10
+[2014-02-27 05:39:23][debug]  delete_order.item=>UPDATE `item` SET `store`=`store`+0,`sale`=`sale`-0
+[2014-02-27 05:39:23][debug]  delete_order.sql=>DELETE FROM `order` WHERE `id`=24
+[2014-02-27 05:39:23][debug]  finished action => OrderMngAction.deleteOrder, cost time = 0.104719
+[2014-02-27 05:39:23][debug]  
+[2014-02-27 05:39:23][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:39:23][debug]  Database Driver Class Initialized
+[2014-02-27 05:39:23][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:39:23][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:39:23][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.014172
+[2014-02-27 05:39:23][debug]  
+[2014-02-27 05:39:29][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:39:29][debug]  Database Driver Class Initialized
+[2014-02-27 05:39:29][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:39:29][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:39:29][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.002836
+[2014-02-27 05:39:29][debug]  
+[2014-02-27 05:39:39][debug]  call action => OrderMngAction.deleteOrder
+[2014-02-27 05:39:39][debug]  Database Driver Class Initialized
+[2014-02-27 05:39:39][debug]  delete_order.customer=>UPDATE `customer` SET `owe`=`owe`-20,`sale`=`sale`-60,`debt`=`debt`-750 WHERE `id`=10
+[2014-02-27 05:39:39][debug]  delete_order.item=>UPDATE `item` SET `store`=`store`+60,`sale`=`sale`-60
+[2014-02-27 05:39:39][debug]  delete_order.sql=>DELETE FROM `order` WHERE `id`=22
+[2014-02-27 05:39:39][debug]  delete_order.customer=>UPDATE `customer` SET `owe`=`owe`-10,`sale`=`sale`-30,`debt`=`debt`-450 WHERE `id`=10
+[2014-02-27 05:39:39][debug]  delete_order.item=>UPDATE `item` SET `store`=`store`+30,`sale`=`sale`-30
+[2014-02-27 05:39:39][debug]  delete_order.sql=>DELETE FROM `order` WHERE `id`=19
+[2014-02-27 05:39:39][debug]  finished action => OrderMngAction.deleteOrder, cost time = 0.272705
+[2014-02-27 05:39:39][debug]  
+[2014-02-27 05:39:39][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:39:39][debug]  Database Driver Class Initialized
+[2014-02-27 05:39:39][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:39:39][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:39:39][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.01202
+[2014-02-27 05:39:39][debug]  
+[2014-02-27 05:40:04][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 05:40:04][debug]  Database Driver Class Initialized
+[2014-02-27 05:40:04][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 05:40:04][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.003213
+[2014-02-27 05:40:04][debug]  
+[2014-02-27 05:40:18][debug]  call action => OrderMngAction.createOrder
+[2014-02-27 05:40:18][debug]  Database Driver Class Initialized
+[2014-02-27 05:40:18][debug]  get_consignee_name.sql =>SELECT `name` FROM `customer` WHERE `id`=10
+[2014-02-27 05:40:19][debug]  create_order.customer=>UPDATE `customer` SET `owe`=`owe`+46,`sale`=`sale`+80,`debt`=`debt`+5000 WHERE `id`=10
+[2014-02-27 05:40:19][debug]  create_order.item=>UPDATE `item` SET `store`=`store`-80,`sale`=`sale`+80 WHERE `id`=1
+[2014-02-27 05:40:19][debug]  {"sale":80,"recycle":34,"date":"2014\/02\/11","deliver":"\u4e2a","mark":"","pay":"5000","consignee":"aaa","consignee_id":10}
+[2014-02-27 05:40:19][debug]  finished action => OrderMngAction.createOrder, cost time = -0.845663
+[2014-02-27 05:40:19][debug]  
+[2014-02-27 05:40:19][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:40:19][debug]  Database Driver Class Initialized
+[2014-02-27 05:40:19][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:40:19][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:40:19][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012196
+[2014-02-27 05:40:19][debug]  
+[2014-02-27 05:40:23][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:40:23][debug]  Database Driver Class Initialized
+[2014-02-27 05:40:23][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:40:23][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:40:23][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.013826
+[2014-02-27 05:40:23][debug]  
+[2014-02-27 05:40:30][debug]  call action => OrderMngAction.payOrder
+[2014-02-27 05:40:30][debug]  Database Driver Class Initialized
+[2014-02-27 05:40:30][debug]  delete_order.customer=>UPDATE `customer` SET `debt`=`debt`-5000 WHERE `id`=10
+[2014-02-27 05:40:30][debug]  pay_order.sql=>UPDATE `order` SET `status`=1 WHERE `id`=25
+[2014-02-27 05:40:30][debug]  finished action => OrderMngAction.payOrder, cost time = 0.098292
+[2014-02-27 05:40:30][debug]  
+[2014-02-27 05:40:30][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:40:30][debug]  Database Driver Class Initialized
+[2014-02-27 05:40:30][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:40:30][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:40:30][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.004519
+[2014-02-27 05:40:30][debug]  
+[2014-02-27 05:40:35][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:40:35][debug]  Database Driver Class Initialized
+[2014-02-27 05:40:35][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:40:35][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:40:35][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.014061
+[2014-02-27 05:40:35][debug]  
+[2014-02-27 05:40:39][debug]  call action => OrderMngAction.deleteOrder
+[2014-02-27 05:40:39][debug]  Database Driver Class Initialized
+[2014-02-27 05:40:39][debug]  delete_order.customer=>UPDATE `customer` SET `owe`=`owe`-46,`sale`=`sale`-80,`debt`=`debt`-5000 WHERE `id`=10
+[2014-02-27 05:40:39][debug]  delete_order.item=>UPDATE `item` SET `store`=`store`+80,`sale`=`sale`-80
+[2014-02-27 05:40:39][debug]  delete_order.sql=>DELETE FROM `order` WHERE `id`=25
+[2014-02-27 05:40:39][debug]  finished action => OrderMngAction.deleteOrder, cost time = 0.140665
+[2014-02-27 05:40:39][debug]  
+[2014-02-27 05:40:39][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:40:39][debug]  Database Driver Class Initialized
+[2014-02-27 05:40:39][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:40:39][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:40:39][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.011934
+[2014-02-27 05:40:39][debug]  
+[2014-02-27 05:40:42][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:40:42][debug]  Database Driver Class Initialized
+[2014-02-27 05:40:42][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:40:42][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:40:42][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.004211
+[2014-02-27 05:40:42][debug]  
+[2014-02-27 05:43:50][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:43:50][debug]  Database Driver Class Initialized
+[2014-02-27 05:43:50][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:43:50][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:43:50][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.013216
+[2014-02-27 05:43:50][debug]  
+[2014-02-27 05:43:50][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:43:50][debug]  Database Driver Class Initialized
+[2014-02-27 05:43:50][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:43:50][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:43:50][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.005775
+[2014-02-27 05:43:50][debug]  
+[2014-02-27 05:43:50][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 05:43:50][debug]  Database Driver Class Initialized
+[2014-02-27 05:43:50][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 05:43:50][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.012795
+[2014-02-27 05:43:50][debug]  
+[2014-02-27 05:43:51][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 05:43:51][debug]  Database Driver Class Initialized
+[2014-02-27 05:43:51][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 05:43:51][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.004515
+[2014-02-27 05:43:51][debug]  
+[2014-02-27 05:44:03][debug]  call action => OrderMngAction.createOrder
+[2014-02-27 05:44:03][debug]  Database Driver Class Initialized
+[2014-02-27 05:44:03][debug]  get_consignee_name.sql =>SELECT `name` FROM `customer` WHERE `id`=12
+[2014-02-27 05:44:03][debug]  create_order.customer=>UPDATE `customer` SET `owe`=`owe`+42,`sale`=`sale`+67,`debt`=`debt`+656 WHERE `id`=12
+[2014-02-27 05:44:03][debug]  create_order.item=>UPDATE `item` SET `store`=`store`-67,`sale`=`sale`+67 WHERE `id`=1
+[2014-02-27 05:44:03][debug]  {"sale":67,"recycle":25,"date":"2014\/02\/12","deliver":"\u54e5\u54e5","mark":"","pay":"656","consignee":"\u7231\u6f4d\u574a","consignee_id":12}
+[2014-02-27 05:44:03][debug]  finished action => OrderMngAction.createOrder, cost time = 0.15986
+[2014-02-27 05:44:03][debug]  
+[2014-02-27 05:44:03][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:44:03][debug]  Database Driver Class Initialized
+[2014-02-27 05:44:03][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:44:03][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:44:03][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012682
+[2014-02-27 05:44:03][debug]  
+[2014-02-27 05:44:07][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:44:07][debug]  Database Driver Class Initialized
+[2014-02-27 05:44:07][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:44:07][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:44:07][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.012795
+[2014-02-27 05:44:07][debug]  
+[2014-02-27 05:44:07][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:44:07][debug]  Database Driver Class Initialized
+[2014-02-27 05:44:07][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:44:07][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:44:07][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.004649
+[2014-02-27 05:44:07][debug]  
+[2014-02-27 05:44:12][debug]  call action => OrderMngAction.payOrder
+[2014-02-27 05:44:12][debug]  Database Driver Class Initialized
+[2014-02-27 05:44:12][debug]  delete_order.customer=>UPDATE `customer` SET `debt`=`debt`-656 WHERE `id`=12
+[2014-02-27 05:44:12][debug]  pay_order.sql=>UPDATE `order` SET `status`=1 WHERE `id`=26
+[2014-02-27 05:44:12][debug]  finished action => OrderMngAction.payOrder, cost time = 0.223268
+[2014-02-27 05:44:12][debug]  
+[2014-02-27 05:44:12][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:44:12][debug]  Database Driver Class Initialized
+[2014-02-27 05:44:12][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:44:12][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:44:12][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.004429
+[2014-02-27 05:44:12][debug]  
+[2014-02-27 05:44:16][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:44:16][debug]  Database Driver Class Initialized
+[2014-02-27 05:44:16][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:44:16][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:44:16][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.012374
+[2014-02-27 05:44:16][debug]  
+[2014-02-27 05:44:20][debug]  call action => OrderMngAction.deleteOrder
+[2014-02-27 05:44:20][debug]  Database Driver Class Initialized
+[2014-02-27 05:44:20][debug]  delete_order.customer=>UPDATE `customer` SET `owe`=`owe`-42,`sale`=`sale`-67 WHERE `id`=12
+[2014-02-27 05:44:20][debug]  delete_order.item=>UPDATE `item` SET `store`=`store`+67,`sale`=`sale`-67
+[2014-02-27 05:44:20][debug]  delete_order.sql=>DELETE FROM `order` WHERE `id`=26
+[2014-02-27 05:44:20][debug]  finished action => OrderMngAction.deleteOrder, cost time = 0.157105
+[2014-02-27 05:44:20][debug]  
+[2014-02-27 05:44:20][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:44:20][debug]  Database Driver Class Initialized
+[2014-02-27 05:44:20][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:44:20][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:44:20][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.013931
+[2014-02-27 05:44:20][debug]  
+[2014-02-27 05:44:25][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:44:25][debug]  Database Driver Class Initialized
+[2014-02-27 05:44:25][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:44:25][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:44:25][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.012935
+[2014-02-27 05:44:25][debug]  
+[2014-02-27 05:45:29][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 05:45:29][debug]  Database Driver Class Initialized
+[2014-02-27 05:45:29][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 05:45:29][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.021414
+[2014-02-27 05:45:29][debug]  
+[2014-02-27 05:45:42][debug]  call action => OrderMngAction.createOrder
+[2014-02-27 05:45:42][debug]  Database Driver Class Initialized
+[2014-02-27 05:45:42][debug]  get_consignee_name.sql =>SELECT `name` FROM `customer` WHERE `id`=12
+[2014-02-27 05:45:42][debug]  create_order.customer=>UPDATE `customer` SET `owe`=`owe`+61,`sale`=`sale`+67,`debt`=`debt`+450 WHERE `id`=12
+[2014-02-27 05:45:42][debug]  create_order.item=>UPDATE `item` SET `store`=`store`-67,`sale`=`sale`+67 WHERE `id`=1
+[2014-02-27 05:45:43][debug]  {"sale":67,"recycle":6,"date":"2014\/02\/19","deliver":"\u4eba\u4eba","mark":"","pay":"450","consignee":"\u7231\u6f4d\u574a","consignee_id":12}
+[2014-02-27 05:45:43][debug]  finished action => OrderMngAction.createOrder, cost time = -0.84112
+[2014-02-27 05:45:43][debug]  
+[2014-02-27 05:45:43][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:45:43][debug]  Database Driver Class Initialized
+[2014-02-27 05:45:43][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:45:43][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:45:43][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012159
+[2014-02-27 05:45:43][debug]  
+[2014-02-27 05:45:46][debug]  call action => ItemMngAction.getItemList
+[2014-02-27 05:45:46][debug]  Database Driver Class Initialized
+[2014-02-27 05:45:46][debug]  finished action => ItemMngAction.getItemList, cost time = 0.00311
+[2014-02-27 05:45:46][debug]  
+[2014-02-27 05:45:49][debug]  call action => ItemMngAction.getItemList
+[2014-02-27 05:45:49][debug]  Database Driver Class Initialized
+[2014-02-27 05:45:49][debug]  finished action => ItemMngAction.getItemList, cost time = 0.013017
+[2014-02-27 05:45:49][debug]  
+[2014-02-27 05:46:02][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:46:02][debug]  Database Driver Class Initialized
+[2014-02-27 05:46:02][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:46:02][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:46:02][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.011661
+[2014-02-27 05:46:02][debug]  
+[2014-02-27 05:46:10][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:46:10][debug]  Database Driver Class Initialized
+[2014-02-27 05:46:10][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:46:10][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:46:10][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.012893
+[2014-02-27 05:46:10][debug]  
+[2014-02-27 05:46:10][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:46:10][debug]  Database Driver Class Initialized
+[2014-02-27 05:46:10][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:46:10][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:46:10][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.013629
+[2014-02-27 05:46:10][debug]  
+[2014-02-27 05:46:16][debug]  call action => OrderMngAction.deleteOrder
+[2014-02-27 05:46:16][debug]  Database Driver Class Initialized
+[2014-02-27 05:46:16][debug]  delete_order.customer=>UPDATE `customer` SET `owe`=`owe`-61,`sale`=`sale`-67,`debt`=`debt`-450 WHERE `id`=12
+[2014-02-27 05:46:16][debug]  delete_order.item=>UPDATE `item` SET `store`=`store`+67,`sale`=`sale`-67
+[2014-02-27 05:46:16][debug]  delete_order.sql=>DELETE FROM `order` WHERE `id`=27
+[2014-02-27 05:46:16][debug]  finished action => OrderMngAction.deleteOrder, cost time = 0.155168
+[2014-02-27 05:46:16][debug]  
+[2014-02-27 05:46:16][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:46:16][debug]  Database Driver Class Initialized
+[2014-02-27 05:46:17][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:46:17][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:46:17][debug]  finished action => OrderMngAction.getOrderList, cost time = -0.986417
+[2014-02-27 05:46:17][debug]  
+[2014-02-27 05:46:21][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:46:21][debug]  Database Driver Class Initialized
+[2014-02-27 05:46:21][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:46:21][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:46:21][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.01286
+[2014-02-27 05:46:21][debug]  
+[2014-02-27 05:46:24][debug]  call action => ItemMngAction.getItemList
+[2014-02-27 05:46:24][debug]  Database Driver Class Initialized
+[2014-02-27 05:46:24][debug]  finished action => ItemMngAction.getItemList, cost time = 0.004401
+[2014-02-27 05:46:24][debug]  
+[2014-02-27 05:47:01][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 05:47:01][debug]  Database Driver Class Initialized
+[2014-02-27 05:47:01][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 05:47:01][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.004991
+[2014-02-27 05:47:01][debug]  
+[2014-02-27 05:47:17][debug]  call action => OrderMngAction.createOrder
+[2014-02-27 05:47:17][debug]  Database Driver Class Initialized
+[2014-02-27 05:47:17][debug]  get_consignee_name.sql =>SELECT `name` FROM `customer` WHERE `id`=12
+[2014-02-27 05:47:17][debug]  create_order.customer=>UPDATE `customer` SET `owe`=`owe`+52,`sale`=`sale`+80,`debt`=`debt`+1350 WHERE `id`=12
+[2014-02-27 05:47:17][debug]  create_order.item=>UPDATE `item` SET `store`=`store`-80,`sale`=`sale`+80 WHERE `id`=1
+[2014-02-27 05:47:17][debug]  {"sale":80,"recycle":28,"date":"2014\/02\/11","deliver":"\u54af\u54af\u54af","mark":"","pay":"1350","consignee":"\u7231\u6f4d\u574a","consignee_id":12}
+[2014-02-27 05:47:17][debug]  finished action => OrderMngAction.createOrder, cost time = 0.155889
+[2014-02-27 05:47:17][debug]  
+[2014-02-27 05:47:17][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:47:17][debug]  Database Driver Class Initialized
+[2014-02-27 05:47:17][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:47:17][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:47:17][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012712
+[2014-02-27 05:47:17][debug]  
+[2014-02-27 05:47:28][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:47:28][debug]  Database Driver Class Initialized
+[2014-02-27 05:47:28][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:47:28][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:47:28][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.014287
+[2014-02-27 05:47:28][debug]  
+[2014-02-27 05:48:04][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:48:04][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:04][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 AND `consignee_id`=12 LIMIT 0,50
+[2014-02-27 05:48:04][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1 AND `consignee_id`=12
+[2014-02-27 05:48:04][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.013511
+[2014-02-27 05:48:04][debug]  
+[2014-02-27 05:48:06][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:48:06][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:06][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 AND `consignee_id`=12 AND `status`=0 LIMIT 0,50
+[2014-02-27 05:48:06][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1 AND `consignee_id`=12 AND `status`=0
+[2014-02-27 05:48:06][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.005101
+[2014-02-27 05:48:06][debug]  
+[2014-02-27 05:48:11][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:48:11][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:11][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 AND `consignee_id`=12 AND `status`=0 ORDER BY date ASC LIMIT 0,50
+[2014-02-27 05:48:11][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1 AND `consignee_id`=12 AND `status`=0
+[2014-02-27 05:48:11][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.014055
+[2014-02-27 05:48:11][debug]  
+[2014-02-27 05:48:11][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:48:11][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:11][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 AND `consignee_id`=12 AND `status`=0 ORDER BY date DESC LIMIT 0,50
+[2014-02-27 05:48:11][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1 AND `consignee_id`=12 AND `status`=0
+[2014-02-27 05:48:11][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.01389
+[2014-02-27 05:48:11][debug]  
+[2014-02-27 05:48:17][debug]  call action => OrderMngAction.payOrder
+[2014-02-27 05:48:17][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:17][debug]  delete_order.customer=>UPDATE `customer` SET `debt`=`debt`-1350 WHERE `id`=12
+[2014-02-27 05:48:17][debug]  pay_order.sql=>UPDATE `order` SET `status`=1 WHERE `id`=28
+[2014-02-27 05:48:17][debug]  finished action => OrderMngAction.payOrder, cost time = 0.115292
+[2014-02-27 05:48:17][debug]  
+[2014-02-27 05:48:17][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:48:17][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:17][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 AND `consignee_id`=12 AND `status`=0 ORDER BY date DESC LIMIT 0,50
+[2014-02-27 05:48:17][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1 AND `consignee_id`=12 AND `status`=0
+[2014-02-27 05:48:17][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012399
+[2014-02-27 05:48:17][debug]  
+[2014-02-27 05:48:22][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:48:22][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:22][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:48:22][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:48:22][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.013344
+[2014-02-27 05:48:22][debug]  
+[2014-02-27 05:48:26][debug]  call action => ItemMngAction.getItemList
+[2014-02-27 05:48:26][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:26][debug]  finished action => ItemMngAction.getItemList, cost time = 0.013154
+[2014-02-27 05:48:26][debug]  
+[2014-02-27 05:48:32][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:48:32][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:32][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:48:32][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:48:32][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.003339
+[2014-02-27 05:48:32][debug]  
+[2014-02-27 05:48:32][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 05:48:32][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:32][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 05:48:32][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 05:48:32][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.004823
+[2014-02-27 05:48:32][debug]  
+[2014-02-27 05:48:32][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:48:32][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:32][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 ORDER BY date DESC LIMIT 0,50
+[2014-02-27 05:48:32][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:48:32][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.0022180000000001
+[2014-02-27 05:48:32][debug]  
+[2014-02-27 05:48:32][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:48:32][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:32][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 ORDER BY date DESC LIMIT 0,50
+[2014-02-27 05:48:32][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:48:32][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.0051629999999999
+[2014-02-27 05:48:32][debug]  
+[2014-02-27 05:48:32][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 05:48:32][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:32][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 05:48:32][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.013576
+[2014-02-27 05:48:32][debug]  
+[2014-02-27 05:48:33][debug]  call action => ItemMngAction.getItemList
+[2014-02-27 05:48:33][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:33][debug]  finished action => ItemMngAction.getItemList, cost time = 0.012161
+[2014-02-27 05:48:33][debug]  
+[2014-02-27 05:48:36][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:48:36][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:36][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 ORDER BY date DESC LIMIT 0,50
+[2014-02-27 05:48:36][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:48:36][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.011059
+[2014-02-27 05:48:36][debug]  
+[2014-02-27 05:48:36][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:48:36][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:36][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 05:48:36][debug]  Database Driver Class Initialized
+[2014-02-27 05:48:36][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 05:48:36][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.0061709999999999
+[2014-02-27 05:48:36][debug]  
+[2014-02-27 05:48:36][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 ORDER BY date DESC LIMIT 0,50
+[2014-02-27 05:48:36][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:48:36][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.0085909999999999
+[2014-02-27 05:48:36][debug]  
+[2014-02-27 05:56:16][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:56:16][debug]  Database Driver Class Initialized
+[2014-02-27 05:56:16][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 AND `consignee_id`=12 ORDER BY date DESC LIMIT 0,50
+[2014-02-27 05:56:16][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1 AND `consignee_id`=12
+[2014-02-27 05:56:16][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.013484
+[2014-02-27 05:56:16][debug]  
+[2014-02-27 05:56:20][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:56:20][debug]  Database Driver Class Initialized
+[2014-02-27 05:56:20][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 AND `consignee_id`=10 ORDER BY date DESC LIMIT 0,50
+[2014-02-27 05:56:20][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1 AND `consignee_id`=10
+[2014-02-27 05:56:20][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.014262
+[2014-02-27 05:56:20][debug]  
+[2014-02-27 05:56:32][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:56:32][debug]  Database Driver Class Initialized
+[2014-02-27 05:56:32][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 ORDER BY date DESC LIMIT 0,50
+[2014-02-27 05:56:32][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:56:32][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.012597
+[2014-02-27 05:56:32][debug]  
+[2014-02-27 05:56:32][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:56:32][debug]  Database Driver Class Initialized
+[2014-02-27 05:56:32][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 05:56:32][debug]  Database Driver Class Initialized
+[2014-02-27 05:56:32][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 ORDER BY date DESC LIMIT 0,50
+[2014-02-27 05:56:32][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:56:32][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.008279
+[2014-02-27 05:56:32][debug]  
+[2014-02-27 05:56:32][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 05:56:32][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.014747
+[2014-02-27 05:56:32][debug]  
+[2014-02-27 05:58:15][debug]  call action => ItemMngAction.getItemList
+[2014-02-27 05:58:15][debug]  Database Driver Class Initialized
+[2014-02-27 05:58:15][debug]  finished action => ItemMngAction.getItemList, cost time = 0.005214
+[2014-02-27 05:58:15][debug]  
+[2014-02-27 05:59:29][debug]  call action => OrderMngAction.getSaleTendency
+[2014-02-27 05:59:29][debug]  Database Driver Class Initialized
+[2014-02-27 05:59:29][debug]  get_owe_tendency.sql =>SELECT sum(`sale`) as y,`date` as x FROM `order` WHERE `date`>'2014-01-28' GROUP BY `date`
+[2014-02-27 05:59:29][debug]  finished action => OrderMngAction.getSaleTendency, cost time = 0.012186
+[2014-02-27 05:59:29][debug]  
+[2014-02-27 05:59:34][debug]  call action => OrderMngAction.deleteOrder
+[2014-02-27 05:59:34][debug]  Database Driver Class Initialized
+[2014-02-27 05:59:34][debug]  delete_order.customer=>UPDATE `customer` SET `owe`=`owe`-52,`sale`=`sale`-80 WHERE `id`=12
+[2014-02-27 05:59:34][debug]  delete_order.item=>UPDATE `item` SET `store`=`store`+80,`sale`=`sale`-80
+[2014-02-27 05:59:34][debug]  delete_order.sql=>DELETE FROM `order` WHERE `id`=28
+[2014-02-27 05:59:34][debug]  finished action => OrderMngAction.deleteOrder, cost time = 0.146302
+[2014-02-27 05:59:34][debug]  
+[2014-02-27 05:59:34][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 05:59:34][debug]  Database Driver Class Initialized
+[2014-02-27 05:59:35][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 ORDER BY date DESC LIMIT 0,50
+[2014-02-27 05:59:35][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 05:59:35][debug]  finished action => OrderMngAction.getOrderList, cost time = -0.986089
+[2014-02-27 05:59:35][debug]  
+[2014-02-27 06:04:10][debug]  call action => OrderMngAction.getConsigneeList
+[2014-02-27 06:04:10][debug]  Database Driver Class Initialized
+[2014-02-27 06:04:10][debug]  get_consignee_list.sql =>SELECT `id` as value,`name` as text FROM `customer`
+[2014-02-27 06:04:10][debug]  finished action => OrderMngAction.getConsigneeList, cost time = 0.005549
+[2014-02-27 06:04:10][debug]  
+[2014-02-27 06:04:24][debug]  call action => OrderMngAction.createOrder
+[2014-02-27 06:04:24][debug]  Database Driver Class Initialized
+[2014-02-27 06:04:24][debug]  get_consignee_name.sql =>SELECT `name` FROM `customer` WHERE `id`=13
+[2014-02-27 06:04:24][debug]  create_order.customer=>UPDATE `customer` SET `owe`=`owe`+0,`sale`=`sale`+0,`debt`=`debt`+560 WHERE `id`=13
+[2014-02-27 06:04:24][debug]  create_order.item=>UPDATE `item` SET `store`=`store`-0,`sale`=`sale`+0 WHERE `id`=1
+[2014-02-27 06:04:24][debug]  {"sale":0,"recycle":0,"date":"2014\/02\/05","deliver":"\u641c\u7d22","mark":"","pay":"560","consignee":"f","consignee_id":13}
+[2014-02-27 06:04:24][debug]  finished action => OrderMngAction.createOrder, cost time = 0.106177
+[2014-02-27 06:04:24][debug]  
+[2014-02-27 06:04:24][debug]  call action => OrderMngAction.getOrderList
+[2014-02-27 06:04:24][debug]  Database Driver Class Initialized
+[2014-02-27 06:04:24][debug]  get_order_list.sql =>SELECT * FROM `order` WHERE 1=1 ORDER BY date DESC LIMIT 0,50
+[2014-02-27 06:04:24][debug]  get_order_list.count =>SELECT COUNT(*) AS sum FROM `order` WHERE 1=1
+[2014-02-27 06:04:24][debug]  finished action => OrderMngAction.getOrderList, cost time = 0.003008
+[2014-02-27 06:04:24][debug]  
+[2014-02-27 06:04:34][debug]  call action => CustomerMngAction.getCustomerList
+[2014-02-27 06:04:34][debug]  Database Driver Class Initialized
+[2014-02-27 06:04:34][debug]  get_customer_list.sql =>SELECT * FROM `customer` WHERE 1=1 LIMIT 0,50
+[2014-02-27 06:04:34][debug]  get_customer_list.sql =>SELECT COUNT(*) AS sum FROM `customer` WHERE 1=1
+[2014-02-27 06:04:34][debug]  finished action => CustomerMngAction.getCustomerList, cost time = 0.005309
+[2014-02-27 06:04:34][debug]  

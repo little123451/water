@@ -143,6 +143,12 @@ define(function(require, exports, module){
         },
 
         addOrderFrame : function(me){
+
+            var date = new Date();
+            var d = date.getDate() < 10 ? "0"+date.getDate():date.getDate();
+            var m = date.getMonth()+1;
+            var y = date.getFullYear();
+
             var win = new fw.FormWindowUi({
                 title : "添加订单",
                 height : 280,
@@ -156,7 +162,7 @@ define(function(require, exports, module){
             win.addItem([
                 {xtype : "textfield", fieldLabel : "出售", allowBlank:false, name : "sale", anchor : "95%"},
                 {xtype : "textfield", fieldLabel : "回收", allowBlank:false, name : "recycle", anchor : "95%"},
-                {xtype : "datefield", fieldLabel : "日期", allowBlank:false, name : "date", format:"Y/m/d"},
+                {xtype : "datefield", fieldLabel : "日期", allowBlank:false, name : "date", format:'Y-n-d', value:y+"-"+m+"-"+d},
                 consignee,
                 {xtype : "textfield", fieldLabel : "送货", allowBlank:false, name : "deliver", anchor : "95%"},
                 {xtype : "textfield", fieldLabel : "应付款", allowBlank:false, name : "pay", anchor : "95%"},

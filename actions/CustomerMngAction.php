@@ -128,7 +128,7 @@ Class CustomerMngAction {
         $dao = M('customer');
 
         //查询数据
-        $sql = "SELECT `sale` as data,`name` as cate FROM `customer`";
+        $sql = "SELECT `sale` as data,`name` as cate FROM `customer` ORDER BY `sale` DESC LIMIT 8";
         $data = $dao->query_result($sql);
         logger::debug($sql);
 
@@ -144,7 +144,7 @@ Class CustomerMngAction {
         $dao = M('customer');
 
         //查询数据
-        $sql = "SELECT `owe` as data,`name` as cate FROM `customer`";
+        $sql = "SELECT `owe` as data,`name` as cate FROM `customer` ORDER BY `owe` DESC LIMIT 8";
         $data = $dao->query_result($sql);
         logger::debug($sql);
 
@@ -160,7 +160,7 @@ Class CustomerMngAction {
         $dao = M('customer');
 
         //查询数据
-        $sql = "SELECT `debt` as data,`name` as cate FROM `customer`";
+        $sql = "SELECT `debt` as data,`name` as cate FROM `customer` ORDER BY `debt` DESC LIMIT 8 ";
         $data = $dao->query_result($sql);
         logger::debug($sql);
 

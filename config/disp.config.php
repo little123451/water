@@ -19,6 +19,7 @@ function load_actions(){
         "delete_order" => new ActionConf("OrderMngAction","deleteOrder"),
         "get_sale_tendency" => new ActionConf("OrderMngAction","getSaleTendency"),
         "pay_order" => new ActionConf("OrderMngAction","payOrder"),
+        "get_order_statistics" => new ActionConf("OrderMngAction","getOrderStatistics"),
 
         "get_customer_list" => new ActionConf("CustomerMngAction","getCustomerList"),
         "update_customer_info" => new ActionConf("CustomerMngAction","updateCustomerInfo"),

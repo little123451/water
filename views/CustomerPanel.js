@@ -118,7 +118,7 @@ define(function(require, exports, module){
             return [
                 {xtype : "button", text : "添加用户", width : 80 , handler:function(){me.addCustomerFrame(me);}}, '-',
                 {xtype : "button", text : "删除用户", width : 80 , handler:function(){me.deleteCustomer(me)}}, '-',
-                {xtype : "button", text : "快捷地图", width : 80 , handler:function(){me.quickMap(me)}},'-',
+                //{xtype : "button", text : "快捷地图", width : 80 , handler:function(){me.quickMap(me)}},'-',
                 {xtype : "button", text : "售出", width : 80 , handler:function(){me.createSalePie(me)}},'-',
                 {xtype : "button", text : "空桶", width : 80 , handler:function(){me.createOwePie(me)}},'-',
                 {xtype : "button", text : "未付款", width : 80 , handler:function(){me.createDebtPie(me)}},'-'

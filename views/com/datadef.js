@@ -25,6 +25,12 @@ define(function(require, exports, module){
         {name : "mark"}
     ]);
 
+    exports.order_statistics = Ext.data.Record.create([
+        {name : "sale"},
+        {name : "recycle"},
+        {name : "pay"}
+    ]);
+
     //下拉框的数据格式
     exports.comboBox_list = Ext.data.Record.create([
         {name : "text"},

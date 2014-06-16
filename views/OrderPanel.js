@@ -26,6 +26,7 @@ define(function(require, exports, module){
             var me = this;
             me.module_id = module_id;
             me.store = this.createStore();
+            me.statistics = this.createStatisticsStore();
             me.sm = new Ext.grid.CheckboxSelectionModel;
             OrderPanel.superclass.constructor.call(this, {
                 id : "tab:"+module_id,
@@ -43,6 +44,7 @@ define(function(require, exports, module){
                 listeners : {
                     render : function(){
                         me.store.load({params:{start:0, limit:me.pageSize}});
+                        me.statistics.load();
                         tbarB = me.createTbarB(module_id);
                         tbarB.render(me.tbar);
                     }
@@ -58,6 +60,18 @@ define(function(require, exports, module){
                 autoLoad : true,
                 remoteSort : true,
                 fields : df.order_record
+            });
+            return data;
+        },
+
+        createStatisticsStore : function(){
+            var data = new Ext.data.JsonStore({
+                url : urls.order_url('get_order_statistics'),
+                root : 'data',
+                totalProperty : "total",
+                autoLoad : true,
+                remoteSort : true,
+                fields : df.order_statistics
             });
             return data;
         },
@@ -89,7 +103,8 @@ define(function(require, exports, module){
                 {xtype : "button", text : "添加订单", width : 80 , handler:function(){me.addOrderFrame(me);}}, '-',
                 {xtype : "button", text : "删除订单", width : 80 , handler:function(){me.deleteOrder(me)}}, '-',
                 {xtype : "button", text : "销量趋势", width : 80 , handler:function(){me.saleTendency(me)}}, '-',
-                {xtype : "button", text : "订单结数", width : 80 , handler:function(){me.orderPay(me)}}, '-'
+                {xtype : "button", text : "订单结数", width : 80 , handler:function(){me.orderPay(me)}}, '-',
+                {xtype : "button", text : "统计数据", width : 80 , handler:function(){me.statisticsData(me)}}, '-',
             ];
         },
 
@@ -119,6 +134,8 @@ define(function(require, exports, module){
                     '状态：',status,'-',
                     '送货：',{id : me.__make_id("deliver_search"), xtype : "textfield", width : 100},'-',
                     {xtype : 'button', text : "过滤", width : 50, id : me.__make_id('search_btn'), handler: function(){
+
+                        //列表数据加载参数
                         me.store.setBaseParam("sale", me.__get_comp_value('sale_search'));
                         me.store.setBaseParam("recycle", me.__get_comp_value("recycle_search"));
                         me.store.setBaseParam("date_up", me.__get_comp_value("date_up_search"));
@@ -127,6 +144,16 @@ define(function(require, exports, module){
                         me.store.setBaseParam("status", me.__get_comp_value("status_search"));
                         me.store.setBaseParam("deliver", me.__get_comp_value("deliver_search"));
                         me.store.load({params : {start: 0, limit: me.pageSize}});
+
+                        //统计数据加载参数
+                        me.statistics.setBaseParam("sale", me.__get_comp_value('sale_search'));
+                        me.statistics.setBaseParam("recycle", me.__get_comp_value("recycle_search"));
+                        me.statistics.setBaseParam("date_up", me.__get_comp_value("date_up_search"));
+                        me.statistics.setBaseParam("date_down", me.__get_comp_value("date_down_search"));
+                        me.statistics.setBaseParam("consignee", me.__get_comp_value("consignee_search"));
+                        me.statistics.setBaseParam("status", me.__get_comp_value("status_search"));
+                        me.statistics.setBaseParam("deliver", me.__get_comp_value("deliver_search"));
+                        me.statistics.load();
                     }}
                 ]
             });
@@ -172,6 +199,7 @@ define(function(require, exports, module){
             win.onSubmitSuccess = function(result){
                 utils.show_msg("操作成功");
                 me.store.reload();
+                me.statistics.reload();
                 win.close();
             };
         },
@@ -184,6 +212,7 @@ define(function(require, exports, module){
                 },function(result){
                     if (result.success) {
                         me.store.reload();
+                        me.statistics.reload();
                     }
                     utils.show_msg(result.msg);
                 })
@@ -223,6 +252,7 @@ define(function(require, exports, module){
                 },function(result){
                     if (result.success) {
                         me.store.reload();
+                        me.statistics.reload();
                     }
                     utils.show_msg(result.msg);
                 })
@@ -237,6 +267,15 @@ define(function(require, exports, module){
                 }
                 utils.confirm("确认结数?",pay);
             }
+        },
+
+        statisticsData : function(me){
+            var record = me.getSelectionModel().getSelections();
+            var sale = me.statistics.getAt(0).get('sale');
+            var recycle = me.statistics.getAt(0).get('recycle');
+            var pay = me.statistics.getAt(0).get('pay');
+            var msg = "售出:<font color='blue'>"+sale+"</font>&nbsp;&nbsp;回收:<font color='blue'>"+recycle+"</font>&nbsp;&nbsp;应付款:<font color='blue'>"+pay+"</font>"
+            utils.show_msg(msg);
         }
 
     });

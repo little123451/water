@@ -236,4 +236,40 @@ Class OrderMngAction {
         }
     }
 
+    /**
+     * 统计列表数据
+     * 参数与获取订单列表相似
+     *
+     * @param $param
+     * @return string
+     */
+    public function getOrderStatistics($param){
+        $dao = M('order');
+
+        //获取请求参数
+        $sale = get_val($param,"sale",false);
+        $recycle = get_val($param,"recycle",false);
+        $date_up = get_val($param,"date_up",false);
+        $date_down = get_val($param,"date_down",false);
+        $consignee = get_val($param,"consignee",false);
+        $deliver = get_val($param,"deliver",false);
+        $status = get_val($param,"status",false);
+
+        //组装查询语句
+        $sql = "SELECT @fields@ FROM `order` WHERE 1=1";
+        if ($sale && is_numeric($sale)) { $sql .= " AND `sale`={$sale}"; }
+        if ($recycle && is_numeric($recycle)) { $sql .= " AND `recycle`={$recycle}"; }
+        if ($date_up) { $sql .= " AND `date`<='{$date_up}'"; }
+        if ($date_down) { $sql .= " AND `date`>='{$date_down}'"; }
+        if ($consignee) { $sql .= " AND `consignee_id`={$consignee}"; }
+        if ($deliver) { $sql .= " AND `deliver` LIKE '%{$deliver}%'"; }
+        if (is_numeric($status)) { $sql .= " AND `status`={$status}"; }
+
+        $sql1 = str_replace("@fields@","SUM(`sale`) AS `sale`,SUM(`recycle`) AS `recycle`,SUM(`pay`) AS `pay`",$sql);
+        logger::debug("get_order_list.sql =>".$sql1);
+        $res = $dao->query_result($sql1);
+
+        return build_lst(0,$res);
+    }
+
 }

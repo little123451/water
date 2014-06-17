@@ -23,7 +23,7 @@ Class CustomerMngAction {
         //组装查询语句
         $sql = "SELECT @fields@ FROM `customer` WHERE 1=1";
         if ($id) { $sql .= " AND `id`={$id}"; }
-        if ($name) { $sql .= " AND `name` LIKE `%{$name}%`"; }
+        if ($name) { $sql .= " AND `name` LIKE '%{$name}%'"; }
         if ($tel) { $sql .= " AND `tel`='{$tel}'"; }
 
         $sql1 = str_replace("@fields@","*",$sql);
